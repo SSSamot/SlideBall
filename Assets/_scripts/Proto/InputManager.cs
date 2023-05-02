@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space))
+        if ((Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) || Input.GetKeyDown(KeyCode.Space))
         {
             BallBehaviour.instance.Combo();
             obstacle.GetComponent<Renderer>().material.color = Color.blue;

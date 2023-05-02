@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public class BallBehaviour : MonoBehaviour
 {
     public bool isInObs;
     public bool isInJump;
+
+    public float speed;
+    public Vector3 checkpoint;
 
     public static BallBehaviour instance;
     private void Awake()
@@ -14,26 +18,28 @@ public class BallBehaviour : MonoBehaviour
             return;
         instance = this;
     }
-
-    void Start()
-    {
-        
-    }
     
     void Update()
     {
+        SetCamera();
         SpeedBehaviour();
     }
+
+    public void SetCamera()
+    {
+        Camera.main.transform.position = transform.position + new Vector3(0, 3, -8);
+    }
+
 
     private void SpeedBehaviour()
     {
         Vector3 velocityBall = GetComponent<Rigidbody>().velocity;
 
-        if (velocityBall.z < 5)
+        if (velocityBall.z < speed)
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(velocityBall.x, velocityBall.y, 5f);
+            GetComponent<Rigidbody>().velocity = new Vector3(velocityBall.x, velocityBall.y, speed);
         }
-        else if(velocityBall.z < 5)
+        else if(velocityBall.z < speed)
         {
             GetComponent<Rigidbody>().velocity -= new Vector3(0, 0, 0.2f) * Time.deltaTime;
         }
@@ -61,5 +67,10 @@ public class BallBehaviour : MonoBehaviour
     private void AddJump()
     {
         GetComponent<Rigidbody>().velocity += new Vector3(0, 10f, 0);
+    }
+
+    public void RespawnLastCheckpoint()
+    {
+        transform.position = checkpoint;
     }
 }
