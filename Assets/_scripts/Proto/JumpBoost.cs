@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class JumpBoost : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            BallBehaviour.instance.IsInObs = true;
+            BallBehaviour.instance.isInJump = true;
         }
     }
 
@@ -16,7 +16,7 @@ public class Obstacle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            BallBehaviour.instance.IsInObs = false;
+            BallBehaviour.instance.isInJump = false;
         }
     }
 }
