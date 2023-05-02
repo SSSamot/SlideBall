@@ -52,7 +52,11 @@ public class BallBehaviour : MonoBehaviour
             AddVelocity();
             isInObs = false;
         }
-        else if (isInJump)
+    }
+
+    public void Jump()
+    {
+        if (isInJump)
         {
             AddJump();
             isInJump = false;
