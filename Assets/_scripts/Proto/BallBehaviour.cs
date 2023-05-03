@@ -11,7 +11,16 @@ public class BallBehaviour : MonoBehaviour
     public float speed;
     public Vector3 checkpoint;
 
+    [SerializeField] ParticleSystem qteParticle;
+    private ParticleSystem generatedQteParticle;
+
     public static BallBehaviour instance;
+    
+    private void Start()
+    {
+        generatedQteParticle = null;
+    }
+
     private void Awake()
     {
         if (instance != null)
@@ -50,6 +59,7 @@ public class BallBehaviour : MonoBehaviour
         if(isInObs)
         {
             AddVelocity();
+            QteSuccessPlay();
             isInObs = false;
         }
     }
@@ -59,6 +69,7 @@ public class BallBehaviour : MonoBehaviour
         if (isInJump)
         {
             AddJump();
+            QteSuccessPlay();
             isInJump = false;
         }
     }
@@ -76,5 +87,26 @@ public class BallBehaviour : MonoBehaviour
     public void RespawnLastCheckpoint()
     {
         transform.position = checkpoint;
+    }
+
+    public void QteSuccessPlay()
+    {
+        if (generatedQteParticle == null)
+        {
+            generatedQteParticle = Instantiate(qteParticle, this.transform.position, Quaternion.identity);
+        }
+
+        generatedQteParticle.transform.position = this.transform.position  ;
+        generatedQteParticle.Play();
+
+        // You can set a fixed duration here if your particle system is looping
+        // (I assumed it was not so I used the duration of the particle system to detect the end of it)
+        StartCoroutine(StopFXAfterDelay(generatedQteParticle.main.duration));
+    }
+
+    private IEnumerator StopFXAfterDelay(float a_Delay)
+    {
+        yield return new WaitForSeconds(a_Delay);
+        generatedQteParticle.Stop();
     }
 }
