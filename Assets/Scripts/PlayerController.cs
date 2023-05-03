@@ -18,7 +18,11 @@ public class PlayerController : MonoBehaviour
 
  private float _smoothing = 0.1f;
 
- private void update(){
+ private void Update(){
+
+        Debug.Log("update !!");
+    Camera.main.transform.position = transform.position + new Vector3(0, 3, -8);
+
     Vector3 move = new Vector3(Input.acceleration.x * speed * Time.deltaTime, 0 , -Input.acceleration.z * speed * Time.deltaTime);
     Vector3 rotationMovement = transform.TransformDirection(move);
     cc.Move(rotationMovement);
@@ -29,7 +33,8 @@ public class PlayerController : MonoBehaviour
 
  }
 
- private IEnumerator start(){
+ private IEnumerator Start(){
+        Debug.Log("start");
     Input.gyro.enabled = true;
     Application.targetFrameRate = 60;
     _initialYAngle = transform.eulerAngles.y;
