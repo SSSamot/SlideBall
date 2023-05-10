@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Spawn
   - Floor
+  - RailManager
+  - RailQTE
   layers:
   - Default
   - TransparentFX

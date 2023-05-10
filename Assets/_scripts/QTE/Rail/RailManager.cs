@@ -6,36 +6,43 @@ using UnityEngine;
 
 public class RailManager : MonoBehaviour
 {
-    private void Update()
+    private GameObject ball;
+
+    private void Start()
     {
-        InputManager();
+        ball = FindObjectOfType<BallBehaviour>().gameObject;
+        transform.parent.transform.GetChild(3).gameObject.SetActive(true);
+        
     }
 
-    private void InputManager()
+    private void Update()
     {
-        if (Input.touchCount > 0)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
+        SetPos();
 
-            }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Debug.Log(Input.mousePosition);
         }
-        if (Input.GetMouseButton(0))
-        {
-            Debug.Log("Mouse Click");
+    }
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                Debug.Log(hit.transform.name);
-                if (hit.transform.CompareTag("Floor"))
-                {
-                    Debug.Log("Floor touch !!");
-                }
-            }
+    private void SetPos()
+    {
+        Vector3 posBall = ball.transform.position;
+        transform.position = posBall + new Vector3(0, 0, 2);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collision detected");
+        if (other.CompareTag("RailQTE"))
+        {
+            Vector3 posQTE = other.transform.position;
+            posQTE.z = transform.position.z -0.5f;
+
+            transform.GetChild(0).transform.position = posQTE;
+
+            Vector3 cursor = transform.GetChild(0).transform.position;
+            Debug.Log(Camera.main.WorldToScreenPoint(cursor));
         }
     }
 }

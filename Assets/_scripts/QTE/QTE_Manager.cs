@@ -19,11 +19,6 @@ public class QTE_Manager : MonoBehaviour
 
     private void Update()
     {
-        // A supprimer/changer !! -------------------------------------------------------------------------------
-        //BallBehaviour.instance.isInObs = isInSpeedBoost;
-        //BallBehaviour.instance.isInJump = isInJumpBoost;
-        // ----------------------------------------------------------------------------------------------
-
         QTE_SpeedSuccess();
         QTE_JumpSuccess();
     }
@@ -31,6 +26,7 @@ public class QTE_Manager : MonoBehaviour
     public void RailMod(GameObject rail, bool railMod)
     {
         rail.transform.GetChild(0).gameObject.SetActive(railMod);
+        _rail = rail;
     }
 
     public void QTE_SpeedSuccess()

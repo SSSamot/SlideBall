@@ -29,4 +29,16 @@ public class QTE_InputManager : MonoBehaviour
         else
             slide = false;
     }
+
+    public Vector2 ReturnPos2D()
+    {
+        Vector2 pos = Vector2.zero;
+        //Rail
+        if (Input.touchCount > 0)
+        {
+            pos = Input.GetTouch(0).position;
+        }
+
+        return pos;
+    }
 }
