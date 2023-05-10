@@ -13,9 +13,9 @@ public class Boost_QTE : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             if (isBoostSpeed)
-                BallBehaviour.instance.isInObs = true;
+                QTE_Manager.instance.isInSpeedBoost = true;
             if (isBoostJump)
-                BallBehaviour.instance.isInJump = true;
+                QTE_Manager.instance.isInJumpBoost = true;
         }
     }
 
@@ -23,8 +23,8 @@ public class Boost_QTE : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            BallBehaviour.instance.isInObs = false;
-            BallBehaviour.instance.isInJump = false;
+            QTE_Manager.instance.isInSpeedBoost = false;
+            QTE_Manager.instance.isInJumpBoost = false;
         }
     }
 }
