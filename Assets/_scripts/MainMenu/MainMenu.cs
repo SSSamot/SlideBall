@@ -8,4 +8,10 @@ public class MainMenu : MonoBehaviour
     {
         // Change Scene
     }
+    
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
 }
