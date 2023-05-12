@@ -33,8 +33,17 @@ public class RailManager : MonoBehaviour
             Vector2 maxDist = Camera.main.WorldToScreenPoint(cursor.transform.position + dir * radiusCursor);   //Ditance max between center Cursor and border Cursor
             Vector2 distB = maxDist - posCursor;
 
-            Debug.Log("Dir : " + dir);
-            Debug.Log("Dist : Center-Input = " + dist + "; Center-MaxBorder = " + distB);            
+            //Debug.Log("Dir : " + dir);
+            //Debug.Log("Dist : Center-Input = " + dist + "; Center-MaxBorder = " + distB);
+
+            dist = dist.Abs();
+            distB = distB.Abs();
+            //Debug.Log("Abs : Input = " + dist + "; Border = " + distB);
+
+            if (dist.x <= distB.x && dist.y <= distB.y)
+                Debug.Log("true");
+            else
+                Debug.Log("false");
         }
 
         // Test Calcul pos in WorldSpace
