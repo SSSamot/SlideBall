@@ -22,44 +22,40 @@ public class RailManager : MonoBehaviour
 
         GameObject cursor = transform.GetChild(0).gameObject;
         float radiusCursor = cursor.GetComponent<SphereCollider>().radius * cursor.transform.localScale.x;
-        Debug.DrawRay(cursor.transform.position, cursor.transform.forward * 10, Color.red);
-        //Debug.DrawRay(cursor.transform.position + new Vector3(0, radiusCursor, 0), cursor.transform.forward * 10, Color.blue);  //top
-        //Debug.DrawRay(cursor.transform.position + new Vector3(0, -radiusCursor, 0), cursor.transform.forward * 10, Color.blue); //bot
-        //Debug.DrawRay(cursor.transform.position + new Vector3(radiusCursor, 0, 0), cursor.transform.forward * 10, Color.blue);  //right
-        //Debug.DrawRay(cursor.transform.position + new Vector3(-radiusCursor, 0, 0), cursor.transform.forward * 10, Color.blue); //left
-        /*if (Input.GetKeyDown(KeyCode.M))
+        //Debug.DrawRay(cursor.transform.position, cursor.transform.forward * 10, Color.red);
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            Vector2 posMouse = Input.mousePosition;
-            Vector2 posCursor = Camera.main.WorldToScreenPoint(cursor.transform.position); //Pos cursor in screen
-            Vector2 posRadiusCursor = Camera.main.WorldToScreenPoint(cursor.transform.position + new Vector3(0, radiusCursor, 0)); //Pos border cursor (up) in screen
+            Vector2 posMouse = Input.mousePosition;                                         //pos Mouse in screen
+            Vector2 posCursor = Camera.main.WorldToScreenPoint(cursor.transform.position);  //pos Cursor in screen
 
-            //Debug.Log("Mouse pos : " + posMouse + "; Cursor pos : " + posCursor);
-            //Debug.Log("Pos Cursor with radius : " + posRadiusCursor);
+            Vector2 dist = posMouse - posCursor;    // Distance between Input and Cursor
+            Vector3 dir = dist.normalized;          // Direction from center Cursor to Input pos
+            Vector2 maxDist = Camera.main.WorldToScreenPoint(cursor.transform.position + dir * radiusCursor);   //Ditance max between center Cursor and border Cursor
+            Vector2 distB = maxDist - posCursor;
 
-            //Vector2 dir = posCursor - posMouse;
-            //Vector2 posRadius = posCursor + 
-            Vector3 posMouseWorld = Camera.main.ScreenToWorldPoint(posMouse); 
-            posMouseWorld.z = cursor.transform.position.z;
-            Vector2 dir = cursor.transform.position - posMouseWorld;
-            Debug.DrawRay(cursor.transform.position, dir * 10, Color.blue);  //top
+            Debug.Log("Dir : " + dir);
+            Debug.Log("Dist : Center-Input = " + dist + "; Center-MaxBorder = " + distB);            
+        }
 
-            Debug.Log("pos Cursor : " + cursor.transform.position + "; pos Mouse : " + posMouseWorld);
-        }*/
+        // Test Calcul pos in WorldSpace
+            // pos test tempo 
+        //Vector3 posCheckMaxDist = transform.GetChild(2).transform.position;
+        //Vector3 posMouseWorld = transform.GetChild(1).transform.position;
+        //Vector2 posCursor2D = cursor.transform.position;
 
-        Vector2 posMouse = Input.mousePosition;
-        Vector2 posCursor = Camera.main.WorldToScreenPoint(cursor.transform.position); //Pos cursor in screen
-        Vector2 posRadiusCursor = Camera.main.WorldToScreenPoint(cursor.transform.position + new Vector3(0, radiusCursor, 0)); //Pos border cursor (up) in screen
+            //Calcul
+        //Vector2 dist = posMouseWorld - cursor.transform.position;
+        //Vector2 dir = dist.normalized;
+        //Vector2 maxDist = posCursor2D + dir * radiusCursor;
 
-        //Debug.Log("Mouse pos : " + posMouse + "; Cursor pos : " + posCursor);
-        //Debug.Log("Pos Cursor with radius : " + posRadiusCursor);
-
-        Vector3 posMouseWorld = transform.GetChild(1).transform.position;
-        Vector2 dir = posMouseWorld - cursor.transform.position;
-
-
-
-        Debug.Log(dir);
-        Debug.DrawRay(cursor.transform.position, dir.normalized * 10, Color.blue);  //top
+        //posCheckMaxDist = maxDist;
+        //posCheckMaxDist.z = transform.position.z - 0.5f;
+        //transform.GetChild(2).transform.position = posCheckMaxDist;
+        
+        //Debug.Log(dir);
+        //Debug.Log("dist Center-Touch : " + dist + "; dist Center-MaxBorder : " + (posCheckMaxDist - cursor.transform.position));
+        //Debug.Log("Sreen : pos Cursor = " + posCursor + "; pos CheckMaxDist = " + Camera.main.WorldToScreenPoint(posCheckMaxDist));
+        //Debug.DrawRay(cursor.transform.position, dir * 10, Color.blue);  //top
         //Debug.Log("pos Cursor : " + cursor.transform.position + "; pos Mouse : " + posMouseWorld);
     }
 
