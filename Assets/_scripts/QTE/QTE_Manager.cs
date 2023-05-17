@@ -7,6 +7,8 @@ public class QTE_Manager : MonoBehaviour
     public bool isInSpeedBoost;
     public bool isInJumpBoost;
 
+    public bool railQTE = true;
+
     private GameObject _rail; // Stock actual rail 
 
     public static QTE_Manager instance;
@@ -52,5 +54,6 @@ public class QTE_Manager : MonoBehaviour
     public void QTE_RailResult(bool result)
     {
         // If Success : is finish and player continu to play. Else Miss : Ball falling in void and restart actual section
+        railQTE = result;
     }
 }

@@ -111,11 +111,13 @@ public class RailManager : MonoBehaviour
             Debug.Log("QTE rail : true");
             railQTE.transform.localScale += new Vector3(0, 0, -0.2f);
             railQTE.transform.position += new Vector3(0, 0, 0.1f);
+            QTE_Manager.instance.QTE_RailResult(true);
         }
         else if(dist.x >= distB.x && dist.y >= distB.y && railQTE != null)
         {
             Debug.Log(" QTE rail : false");
             QTE.SetActive(false);
+            QTE_Manager.instance.QTE_RailResult(false);
         }
             
     }
