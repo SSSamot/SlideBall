@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: b288b727b04a8a845a9fca568f5417fb, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.31778985, g: 0.45101267, b: 0.45347312, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -711,6 +711,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1038362968}
     m_Modifications:
+    - target: {fileID: 422640928242770617, guid: ee0dfaa3f7455df44b89bc79f539e2a5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ed7de1b7298d46e41b7267c50864d4c0, type: 2}
     - target: {fileID: 6182644364957303507, guid: ee0dfaa3f7455df44b89bc79f539e2a5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1395,6 +1399,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3987343174140481009, guid: 3c296faffbd20ac4a9aee8705a5896ed, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 59491ef9f8e76414b8a522ac82636ede, type: 2}
     - target: {fileID: 5217772106483226160, guid: 3c296faffbd20ac4a9aee8705a5896ed, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2756,6 +2764,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1341850202}
     m_Modifications:
+    - target: {fileID: 422640928242770617, guid: ee0dfaa3f7455df44b89bc79f539e2a5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ed7de1b7298d46e41b7267c50864d4c0, type: 2}
     - target: {fileID: 6182644364957303507, guid: ee0dfaa3f7455df44b89bc79f539e2a5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3786,6 +3798,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2046776323748590388, guid: 3c296faffbd20ac4a9aee8705a5896ed, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987343174140481009, guid: 3c296faffbd20ac4a9aee8705a5896ed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987343174140481009, guid: 3c296faffbd20ac4a9aee8705a5896ed, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d8af8f434f69794eabd684fb44b4fbf, type: 2}
     - target: {fileID: 5217772106483226160, guid: 3c296faffbd20ac4a9aee8705a5896ed, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3834,6 +3858,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6735436637968167975, guid: 3c296faffbd20ac4a9aee8705a5896ed, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c296faffbd20ac4a9aee8705a5896ed, type: 3}
 --- !u!4 &1094202247492072680 stripped
@@ -3909,6 +3937,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 73292130}
     m_Modifications:
+    - target: {fileID: 422640928242770617, guid: ee0dfaa3f7455df44b89bc79f539e2a5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f971741cd9066447b9b318685015675, type: 2}
     - target: {fileID: 6182644364957303507, guid: ee0dfaa3f7455df44b89bc79f539e2a5, type: 3}
       propertyPath: m_RootOrder
       value: 0
