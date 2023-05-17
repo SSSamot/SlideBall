@@ -23,8 +23,6 @@ public class RailManager : MonoBehaviour
     {
         SetPos();
 
-        CheckPosCursor();
-
         /*GameObject cursor = transform.GetChild(0).gameObject;
         float radiusCursor = cursor.GetComponent<SphereCollider>().radius * cursor.transform.localScale.x;
         //Debug.DrawRay(cursor.transform.position, cursor.transform.forward * 10, Color.red);
@@ -73,6 +71,11 @@ public class RailManager : MonoBehaviour
         //Debug.Log("pos Cursor : " + cursor.transform.position + "; pos Mouse : " + posMouseWorld);
     }
 
+    private void FixedUpdate()
+    {
+        CheckPosCursor();
+    }
+
     private void SetPos()
     {
         Vector3 posBall = ball.transform.position;
@@ -109,14 +112,21 @@ public class RailManager : MonoBehaviour
                 return;
             }
             Debug.Log("QTE rail : true");
-            railQTE.transform.localScale += new Vector3(0, 0, -0.2f);
-            railQTE.transform.position += new Vector3(0, 0, 0.1f);
+            //railQTE.transform.localScale += new Vector3(0, 0, -0.2f);
+            //railQTE.transform.position += new Vector3(0, 0, 0.1f);
+
+            float saveScale = railQTE.transform.localScale.z;
+            float meshCalcul = railQTE.transform.position.z - (transform.position.z + 0.5f); //0.5f is a box collider
+            railQTE.transform.localScale = new Vector3(railQTE.transform.localScale.x, railQTE.transform.localScale.y, meshCalcul*2);
+            float scaleDiff = saveScale - railQTE.transform.localScale.z;
+            railQTE.transform.position += new Vector3(0, 0, scaleDiff/2);
+
             QTE_Manager.instance.QTE_RailResult(true);
         }
         else if(dist.x >= distB.x && dist.y >= distB.y && railQTE != null)
         {
             Debug.Log(" QTE rail : false");
-            QTE.SetActive(false);
+            //QTE.SetActive(false);
             QTE_Manager.instance.QTE_RailResult(false);
         }
             
