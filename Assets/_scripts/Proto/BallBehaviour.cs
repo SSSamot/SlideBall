@@ -15,7 +15,7 @@ public class BallBehaviour : MonoBehaviour
     private void Awake()
     {
         if (instance != null)
-            return;
+            Destroy(this);
         instance = this;
     }
     
