@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5168337421378380560}
   - component: {fileID: 5168337421378380567}
   - component: {fileID: 5168337421378380563}
+  - component: {fileID: 1474678892}
   m_Layer: 0
   m_Name: Fruit
   m_TagString: Untagged
@@ -111,3 +112,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 100
+--- !u!114 &1474678892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5168337421378380566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139d9b71d725d1447b7fdd37cfb115d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitList:
+  - {fileID: 5433731891458031877, guid: 787f0364c15e69246b728d87f916d70d, type: 3}
+  - {fileID: 5189875359276474469, guid: b6da3f7711b14e248af2105e7376f483, type: 3}
+  - {fileID: 5852836375905806296, guid: 62942617c451e574fab54ae54b53e259, type: 3}
+  - {fileID: 8584736598948825480, guid: fd19b2a4662fa774085aa717eddf57f8, type: 3}
+  - {fileID: 3627902940852308146, guid: 38c66ec8c5ca4c94bb50c2a0fe261bf9, type: 3}
+  - {fileID: 9157784891959213860, guid: 0c67e4b30f36a4a45861aab9bea76d7f, type: 3}
+  - {fileID: 2287657963730735626, guid: 1acf1b088bc4ba8438e66ae7c2c4ffe0, type: 3}
+  - {fileID: 6104348740115456251, guid: ebb4374a2552c494b9758c3f6c5afb0d, type: 3}
