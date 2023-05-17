@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 3f64b04030c0e6f46ba30cf1eb437e47, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 3812fdae94652984daf250e873ec7195, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3295,6 +3295,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 8629440048587822383, guid: ddc0aeaa0eb394845af8acc45ad3e723, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8629440048587822387, guid: ddc0aeaa0eb394845af8acc45ad3e723, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -3622,9 +3626,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745698916}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 9.999999, z: -10}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3785,6 +3789,10 @@ PrefabInstance:
     - target: {fileID: 2046776323748590388, guid: 3c296faffbd20ac4a9aee8705a5896ed, type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2046776323748590388, guid: 3c296faffbd20ac4a9aee8705a5896ed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5217772106483226160, guid: 3c296faffbd20ac4a9aee8705a5896ed, type: 3}
       propertyPath: m_RootOrder

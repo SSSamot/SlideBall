@@ -1,0 +1,11 @@
+Model Information:
+* title:	Yummy low poly pack
+* source:	https://sketchfab.com/3d-models/yummy-low-poly-pack-67b4f978152e4ba89dea1a6fd2c263d1
+* author:	MaryGraz (https://sketchfab.com/MaryGraz)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Yummy low poly pack" (https://sketchfab.com/3d-models/yummy-low-poly-pack-67b4f978152e4ba89dea1a6fd2c263d1) by MaryGraz (https://sketchfab.com/MaryGraz) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
