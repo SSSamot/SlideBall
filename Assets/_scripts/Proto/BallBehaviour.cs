@@ -96,11 +96,10 @@ public class BallBehaviour : MonoBehaviour
             generatedQteParticle = Instantiate(qteParticle, this.transform.position, Quaternion.identity);
         }
 
-        generatedQteParticle.transform.position = this.transform.position  ;
+        generatedQteParticle.transform.position = this.transform.position;
+        generatedQteParticle.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         generatedQteParticle.Play();
 
-        // You can set a fixed duration here if your particle system is looping
-        // (I assumed it was not so I used the duration of the particle system to detect the end of it)
         StartCoroutine(StopFXAfterDelay(generatedQteParticle.main.duration));
     }
 
