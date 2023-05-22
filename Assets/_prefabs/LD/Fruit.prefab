@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 100
+  particleEffect: {fileID: 82968891388319146, guid: e529ff07e2b87c14098f13e291396003, type: 3}
 --- !u!114 &1474678892
 MonoBehaviour:
   m_ObjectHideFlags: 0
