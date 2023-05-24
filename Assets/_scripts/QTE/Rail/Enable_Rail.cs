@@ -12,9 +12,9 @@ public class Enable_Rail : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             if (railStart)
-                QTE_Manager.instance.RailMod(transform.parent.gameObject, true);
+                QTE_Manager.instance.RailMod(transform.parent.transform.GetChild(0).gameObject, true);
             if (railEnd)
-                QTE_Manager.instance.RailMod(transform.parent.gameObject, false);
+                QTE_Manager.instance.RailMod(transform.parent.transform.GetChild(0).gameObject, false);
         }
     }
 }

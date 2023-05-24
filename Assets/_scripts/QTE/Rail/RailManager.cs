@@ -7,16 +7,23 @@ using UnityEngine;
 
 public class RailManager : MonoBehaviour
 {
+    [SerializeField] private GameObject prefabQTE;
+
     private GameObject ball;
+    private Transform spawnQTE;
     private GameObject QTE;
     private GameObject railQTE;
 
-    private void Start()
+    private void Awake()
     {
         ball = FindObjectOfType<BallBehaviour>().gameObject;
-        QTE = transform.parent.transform.GetChild(3).gameObject;
-        QTE.SetActive(true);
-        
+        spawnQTE = transform.parent.transform.GetChild(3).transform;
+    }
+
+    public void StartQTE()
+    {
+        QTE = Instantiate(prefabQTE, spawnQTE.position, spawnQTE.rotation); 
+        QTE.transform.parent = spawnQTE.transform;
     }
 
     private void Update()
@@ -101,5 +108,12 @@ public class RailManager : MonoBehaviour
         {
             railQTE = null;
         }
+    }
+
+    public void ResetRail()
+    {
+        Destroy(QTE);
+        //QTE = null;
+        railQTE = null;
     }
 }
