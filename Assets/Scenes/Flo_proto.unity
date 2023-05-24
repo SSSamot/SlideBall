@@ -1400,6 +1400,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655690071}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &699844034 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8629440048587822383, guid: ddc0aeaa0eb394845af8acc45ad3e723, type: 3}
+  m_PrefabInstance: {fileID: 8629440047382296963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &699844043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699844034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b45e7cdbbf773c4c92e7d98220378c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+--- !u!114 &699844044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699844034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d00b2706286fba04eacc969b9f77f676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInObs: 0
+  isInJump: 0
+  speed: 0
+  checkpoint: {x: 0, y: 0, z: 0}
 --- !u!1001 &739311958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3726,5 +3760,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8629440048587822384, guid: ddc0aeaa0eb394845af8acc45ad3e723, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ddc0aeaa0eb394845af8acc45ad3e723, type: 3}
