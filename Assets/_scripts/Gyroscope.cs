@@ -28,10 +28,11 @@ public class Gyroscope : MonoBehaviour
         // Apply movement to the transform's position
         transform.Translate(new Vector3(movement, 0, 0), Space.World);
 
-        //transform.position += new Vector3(0, rotationRate.x * movementSpeed * Time.deltaTime, 0); 
+    }
 
-        // Clamp the position to the screen bounds  
-
-
+    public void resetGyroscopicRotation(){
+        accumulativeRotation = 0f;
+        Input.gyro.enabled = false;
+        Input.gyro.enabled = true;
     }
 }
