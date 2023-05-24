@@ -23,6 +23,9 @@ public class QTE_Manager : MonoBehaviour
     {
         QTE_SpeedSuccess();
         QTE_JumpSuccess();
+
+        if (!railQTE)
+            _rail.transform.parent.gameObject.SetActive(false);
     }
 
     public void RailMod(GameObject rail, bool railMod)
