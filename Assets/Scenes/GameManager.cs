@@ -10,8 +10,7 @@ public enum GameState
     Paused,
     Sliding,
     Playing,
-    Menu,
-    End
+    Menu
 }
 
 public class GameManager : MonoBehaviour
@@ -102,7 +101,7 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd()
     {
-        gameState = GameState.End;
+        gameState = GameState.Menu;
         score += (int)(tmpscore * scoreMult);
         finalTime = TimeSpan.FromSeconds(gameTime);
         LoadScene("EndMenu");
