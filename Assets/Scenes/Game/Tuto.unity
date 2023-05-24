@@ -2442,6 +2442,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8629440048587822384, guid: ddc0aeaa0eb394845af8acc45ad3e723, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8629440048587822387, guid: ddc0aeaa0eb394845af8acc45ad3e723, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2486,26 +2490,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8629440048587822391, guid: ddc0aeaa0eb394845af8acc45ad3e723, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddc0aeaa0eb394845af8acc45ad3e723, type: 3}
---- !u!1 &1641323210 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8629440048587822383, guid: ddc0aeaa0eb394845af8acc45ad3e723, type: 3}
-  m_PrefabInstance: {fileID: 1641323209}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1641323211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641323210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd04edc65392f0241bf0f628db42a64d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 1
 --- !u!1001 &1678479543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2922,6 +2912,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 422640928242770617, guid: ee0dfaa3f7455df44b89bc79f539e2a5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5aa15ce8b8e3f1c488c197e97624f5d2, type: 2}
     - target: {fileID: 6182644364957303507, guid: ee0dfaa3f7455df44b89bc79f539e2a5, type: 3}
       propertyPath: m_RootOrder
       value: 11
