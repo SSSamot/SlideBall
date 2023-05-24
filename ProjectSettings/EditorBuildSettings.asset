@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/QTE.unity
     guid: cb23c03c33095064bbfd820a6cefb355
+  - enabled: 1
+    path: Assets/Scenes/Tuto.unity
+    guid: 4d97a3407cf49c2478eae32f88f6d88a
   m_configObjects: {}
