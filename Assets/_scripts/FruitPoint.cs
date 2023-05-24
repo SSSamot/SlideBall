@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FruitPoint : MonoBehaviour
 {
-    public int scoreValue = 1;
+    [SerializeField] private int scoreValue = 1;
     public GameObject particleEffect;
     private GameController gameController;
 
