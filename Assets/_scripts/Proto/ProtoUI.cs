@@ -8,54 +8,42 @@ using TMPro;
 
 public class ProtoUI : MonoBehaviour
 {
-    public GameObject pauseMenu;
-    public GameObject playMenu;
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject playMenu;
+    [SerializeField] TextMeshProUGUI score;
+    [SerializeField] TextMeshProUGUI time;
+    [SerializeField] TextMeshProUGUI fruit;
+    [SerializeField] TextMeshProUGUI pauseTime;
+    [SerializeField] TextMeshProUGUI pauseScore;
+    [SerializeField] TextMeshProUGUI pauseFruit;
 
-    public TextMeshProUGUI textTime;
     private float timer;
     private float minutes;
     private float seconds;
     private string stringMinutes;
     private string stringSeconds;
 
-    public static bool isPaused = false;
+    public static bool isPaused;
 
-    private void Update()
+    void Start()
     {
-        TimerRun();
-    }
-
-    public void TimerRun()
-    {
-        timer += Time.deltaTime;
-
-        minutes = Mathf.FloorToInt(timer / 60);
-        seconds = Mathf.FloorToInt(timer % 60);
-
-        if (minutes < 10)
-        {
-            stringMinutes = "0" + minutes;
-        } else
-        {
-            stringMinutes = minutes.ToString();
-        }
-
-        if (seconds < 10)
-        {
-            stringSeconds = "0" + seconds;
-        }
-        else
-        {
-            stringSeconds = seconds.ToString();
-        }
-
-        textTime.text = stringMinutes + ":" + stringSeconds;
+        GameManager.Singleton.SetUI(time, score, fruit);
+        GameManager.Singleton.GameStart();
+        isPaused = false;
+        Resume();
     }
 
     public void RefreshScene()
     {
-        SceneManager.LoadScene(0);
+        GameManager.Singleton.GameStart();
         PauseGame();
+        GameManager.Singleton.LoadScene("MainUI");
+    }
+
+    public void LoadMenu()
+    {
+        GameManager.Singleton.GameEnd();
+        GameManager.Singleton.LoadScene("MainMenu");
     }
 
     public void PauseGame()
@@ -73,6 +61,9 @@ public class ProtoUI : MonoBehaviour
 
     private void Pause()
     {
+        pauseTime.text = time.text;
+        pauseScore.text = score.text;
+        pauseFruit.text = fruit.text;
         playMenu.SetActive(false);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;

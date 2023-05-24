@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SceneThomas.unity
     guid: b2232f97508bf394297db151c3cd8fc2
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: c9863f5a610babe42b3f2dc2c9399eff
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 18593c35fd3f1a4438b35ef44711f092
+  - enabled: 1
+    path: Assets/Scenes/MainUI.unity
+    guid: 41680d3b2ae778443bf814fd08ec9c2b
+  - enabled: 1
+    path: Assets/Scenes/EndMenu.unity
+    guid: 702d9487e79a1ff4caf063c0eef2bd67
   m_configObjects: {}
