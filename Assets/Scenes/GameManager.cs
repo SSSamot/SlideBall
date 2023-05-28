@@ -9,7 +9,8 @@ public enum GameState
 {
     Paused,
     Sliding,
-    Playing
+    Playing,
+    Menu
 }
 
 public class GameManager : MonoBehaviour
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
     float maxComboTime;
     float remainningComboTime;
     float gameTime;
-    int fruits;
+    public int fruits;
     private int _score;
     int score
     {
@@ -34,24 +35,31 @@ public class GameManager : MonoBehaviour
         set 
         {
             _score = value;
-            ScoreUI.text = _score.ToString();
+            scoreUI.text = string.Format("{0:000000}", _score);
         }
     }
 
     int tmpscore;
     float scoreMult;
-    [SerializeField] TextMeshProUGUI ScoreUI;
+    TextMeshProUGUI scoreUI;
+    TextMeshProUGUI timerUI;
+    TextMeshProUGUI fruitUI;
 
-    [SerializeField] TextMeshProUGUI TimerUI;
+    public GameState gameState = GameState.Menu;
 
-    //GameState gameState = GameState.Playing;
+    public int currentLevel;
+    public int levelTotal = 3;
+
+    public TimeSpan finalTime;
 
 
     void Start()
     {
-        if (Singleton)
-            Destroy(this);
-        Singleton = this;
+        if (Singleton && Singleton != this)
+            Destroy(gameObject);
+        else
+            Singleton = this;
+            
         DontDestroyOnLoad(this);
         
         gameTime = 0;
@@ -64,35 +72,45 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameTime += Time.deltaTime;
-        TimeSpan time = TimeSpan.FromSeconds(gameTime);
-        TimerUI.text = string.Format("{0:00}:{1:00}",time.Minutes.ToString(),time.Seconds);
-        if (remainningComboTime > 0)
+        if (gameState == GameState.Playing)
         {
-            remainningComboTime -= Time.deltaTime;
-            if(remainningComboTime<0)
+            gameTime += Time.deltaTime;
+            TimeSpan time = TimeSpan.FromSeconds(gameTime);
+            timerUI.text = string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds);
+            if (remainningComboTime > 0)
             {
-                scoreMult = 1f;
-                score += (int)(tmpscore * scoreMult);
+                remainningComboTime -= Time.deltaTime;
+                if (remainningComboTime < 0)
+                {
+                    scoreMult = 1f;
+                    score += (int)(tmpscore * scoreMult);
+                }
             }
-        }   
+        }
     }
 
-    void GameStart()
+    public void GameStart()
     {
+        gameState = GameState.Playing;
         gameTime = 0;
         remainningComboTime = 0;
         fruits = 0;
+        tmpscore = 0;
+        scoreMult = 1f;
     }
 
-    void GameEnd()
+    public void GameEnd()
     {
-        score +=(int)( tmpscore * scoreMult);
+        gameState = GameState.Menu;
+        score += (int)(tmpscore * scoreMult);
+        finalTime = TimeSpan.FromSeconds(gameTime);
+        LoadScene("EndMenu");
     }
 
     public void AddScore(int s)
     {
         fruits++;
+        fruitUI.text = string.Format("{0:000}", fruits);
         if (remainningComboTime > 0)
             tmpscore += s;
         else
@@ -114,5 +132,12 @@ public class GameManager : MonoBehaviour
         if (remainningComboTime < 0)
             remainningComboTime = maxComboTime;
         scoreMult += 0.1f;
+    }
+
+    public void SetUI(TextMeshProUGUI timer, TextMeshProUGUI score, TextMeshProUGUI fruit)
+    {
+        timerUI = timer;
+        scoreUI = score;
+        fruitUI = fruit;
     }
 }
