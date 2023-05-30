@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class RailManager : MonoBehaviour
@@ -47,7 +46,8 @@ public class RailManager : MonoBehaviour
         GameObject cursor = transform.GetChild(0).gameObject;
         float radiusCursor = cursor.GetComponent<SphereCollider>().radius * cursor.transform.localScale.x;
 
-        Vector2 posMouse = Input.mousePosition;                                         //pos Mouse in screen
+        //Vector2 posMouse = Input.mousePosition;                                         //pos Mouse in screen
+        Vector2 posMouse = QTE_InputManager.instance.ReturnPos2D();
         Vector2 posCursor = Camera.main.WorldToScreenPoint(cursor.transform.position);  //pos Cursor in screen
 
         Vector2 dist = posMouse - posCursor;    // Distance between Input and Cursor
@@ -55,8 +55,8 @@ public class RailManager : MonoBehaviour
         Vector2 maxDist = Camera.main.WorldToScreenPoint(cursor.transform.position + dir * radiusCursor);   //Ditance max between center Cursor and border Cursor
         Vector2 distB = maxDist - posCursor;
 
-        dist = dist.Abs();
-        distB = distB.Abs();
+        //dist = dist.Abs();
+        //distB = distB.Abs();
 
         if (dist.x <= distB.x && dist.y <= distB.y && railQTE != null)
         {
