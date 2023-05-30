@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
-using UnityEditor.Experimental.GraphView;
+using UnityEditor.Experimental;
 using UnityEngine;
 
 public class RailManager : MonoBehaviour
@@ -48,8 +48,11 @@ public class RailManager : MonoBehaviour
         Vector2 maxDist = Camera.main.WorldToScreenPoint(cursor.transform.position + dir * radiusCursor);   //Ditance max between center Cursor and border Cursor
         Vector2 distB = maxDist - posCursor;
 
-        dist = dist.Abs();
-        distB = distB.Abs();
+        //dist = dist.Abs();
+        //distB = distB.Abs();
+
+        dist = new Vector2(Mathf.Abs(dist.x), Mathf.Abs(dist.y));
+        distB = new Vector2(Mathf.Abs(distB.x), Mathf.Abs(distB.y));
 
         if (dist.x <= distB.x && dist.y <= distB.y && railQTE != null)
         {
