@@ -46,7 +46,9 @@ public class QTE_Manager : MonoBehaviour
         // Call Function in GameManager for add ScoreMultiply and Velocity Z (speed) or speed var
         if (isInSpeedBoost && QTE_InputManager.instance.click)
         {
-            GameManager.Singleton.QTEWon();
+            Debug.Log("Speed !");
+            //GameManager.Singleton.QTEWon();
+            BallBehaviour.instance.Combo();
         }
     }
     
