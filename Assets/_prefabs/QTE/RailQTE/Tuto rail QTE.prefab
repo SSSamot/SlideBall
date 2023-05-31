@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6649514186417601761}
   m_Layer: 0
-  m_Name: testQTE
+  m_Name: Tuto rail QTE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

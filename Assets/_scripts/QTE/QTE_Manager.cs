@@ -25,11 +25,15 @@ public class QTE_Manager : MonoBehaviour
         QTE_JumpSuccess();
 
         // SUP fonction ###########################################################################################################
-        if (BallBehaviour.instance.transform.position.y < -10)
+        
+        /*
+            if (BallBehaviour.instance.transform.position.y < -10)
         {
             ResetActualRail();
             BallBehaviour.instance.transform.position = new Vector3(0, 1, -45);
         } 
+
+        */
         // ########################################################################################################################
     }
 
