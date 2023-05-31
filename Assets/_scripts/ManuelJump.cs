@@ -14,11 +14,13 @@ public class ManuelJump : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
 
-            if (touch.phase == TouchPhase.Began)
+            
+            if (touch.phase == TouchPhase.Began && !QTE_Manager.instance.isInJumpBoost)
             {
                 swipeStartPosition = touch.position;
                 
             }
+            
 
 
             if (touch.phase == TouchPhase.Moved && !QTE_Manager.instance.isInJumpBoost)
