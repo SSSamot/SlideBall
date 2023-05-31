@@ -47,7 +47,8 @@ public class QTE_Manager : MonoBehaviour
         if (isInSpeedBoost && QTE_InputManager.instance.click)
         {
             //GameManager.Singleton.QTEWon();
-            BallBehaviour.instance.Combo();
+            BallBehaviour.instance.GetComponent<Rigidbody>().velocity += new Vector3(0, 0, 10f); // change by function GameManager
+            isInSpeedBoost = false; 
         }
     }
     
