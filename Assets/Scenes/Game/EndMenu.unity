@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2937,7 +2937,6 @@ GameObject:
   - component: {fileID: 1866667289}
   - component: {fileID: 1866667291}
   - component: {fileID: 1866667290}
-  - component: {fileID: 1866667292}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -3003,22 +3002,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866667288}
   m_CullTransparentMesh: 1
---- !u!114 &1866667292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866667288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdb33718ad53c3e4eae17f7d1f0f9f81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: {fileID: 0}
-  time: {fileID: 0}
-  fruit: {fileID: 0}
-  starsArray: []
 --- !u!1 &2062666017
 GameObject:
   m_ObjectHideFlags: 0
