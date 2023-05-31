@@ -8,6 +8,9 @@ public class DeathZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            
+            Vector3 vec = other.GetComponent<Rigidbody>().velocity;
+            other.GetComponent<Rigidbody>().velocity = new Vector3(vec.x,vec.y, BallBehaviour.instance.speed);
             BallBehaviour.instance.RespawnLastCheckpoint();
         }
     }
