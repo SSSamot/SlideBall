@@ -38,6 +38,10 @@ public class QTE_InputManager : MonoBehaviour
         {
             pos = Input.GetTouch(0).position;
         }
+        else
+        {
+            pos = new Vector2(0, 0);
+        }
 
         return pos;
     }

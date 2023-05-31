@@ -2,21 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
-using UnityEditor.Experimental;
 using UnityEngine;
 
 public class RailManager : MonoBehaviour
 {
+    [SerializeField] private GameObject prefabQTE;
+
     private GameObject ball;
+    private Transform spawnQTE;
     private GameObject QTE;
     private GameObject railQTE;
 
-    private void Start()
+    private void Awake()
     {
         ball = FindObjectOfType<BallBehaviour>().gameObject;
-        QTE = transform.parent.transform.GetChild(3).gameObject;
-        QTE.SetActive(true);
-        
+        spawnQTE = transform.parent.transform.GetChild(3).transform;
+    }
+
+    public void StartQTE()
+    {
+        QTE = Instantiate(prefabQTE, spawnQTE.position, spawnQTE.rotation); 
+        QTE.transform.parent = spawnQTE.transform;
     }
 
     private void Update()
@@ -40,16 +46,14 @@ public class RailManager : MonoBehaviour
         GameObject cursor = transform.GetChild(0).gameObject;
         float radiusCursor = cursor.GetComponent<SphereCollider>().radius * cursor.transform.localScale.x;
 
-        Vector2 posMouse = Input.mousePosition;                                         //pos Mouse in screen
+        //Vector2 posMouse = Input.mousePosition;                                         //pos Mouse in screen
+        Vector2 posMouse = QTE_InputManager.instance.ReturnPos2D();
         Vector2 posCursor = Camera.main.WorldToScreenPoint(cursor.transform.position);  //pos Cursor in screen
 
         Vector2 dist = posMouse - posCursor;    // Distance between Input and Cursor
         Vector3 dir = dist.normalized;          // Direction from center Cursor to Input pos
         Vector2 maxDist = Camera.main.WorldToScreenPoint(cursor.transform.position + dir * radiusCursor);   //Ditance max between center Cursor and border Cursor
         Vector2 distB = maxDist - posCursor;
-
-        //dist = dist.Abs();
-        //distB = distB.Abs();
 
         dist = new Vector2(Mathf.Abs(dist.x), Mathf.Abs(dist.y));
         distB = new Vector2(Mathf.Abs(distB.x), Mathf.Abs(distB.y));
@@ -75,7 +79,6 @@ public class RailManager : MonoBehaviour
         else if(dist.x >= distB.x && dist.y >= distB.y && railQTE != null)
         {
             Debug.Log(" QTE rail : false");
-            //QTE.SetActive(false);
             QTE_Manager.instance.QTE_RailResult(false);
         }
             
@@ -104,5 +107,12 @@ public class RailManager : MonoBehaviour
         {
             railQTE = null;
         }
+    }
+
+    public void ResetRail()
+    {
+        Destroy(QTE);
+        //QTE = null;
+        railQTE = null;
     }
 }
