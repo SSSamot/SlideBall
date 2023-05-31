@@ -35,7 +35,8 @@ public class GameManager : MonoBehaviour
         set 
         {
             _score = value;
-            scoreUI.text = string.Format("{0:000000}", _score);
+            if(scoreUI)
+                scoreUI.text = string.Format("{0:000000}", _score);
         }
     }
 
