@@ -11,7 +11,16 @@ public class BallBehaviour : MonoBehaviour
     public float speed;
     public Vector3 checkpoint;
 
+    [SerializeField] ParticleSystem qteParticle;
+    private ParticleSystem generatedQteParticle;
+
     public static BallBehaviour instance;
+    
+    private void Start()
+    {
+        generatedQteParticle = null;
+    }
+
     private void Awake()
     {
         if (instance != null)
@@ -39,7 +48,7 @@ public class BallBehaviour : MonoBehaviour
         {
             GetComponent<Rigidbody>().velocity = new Vector3(velocityBall.x, velocityBall.y, speed);
         }
-        else if(velocityBall.z < speed)
+        else if(velocityBall.z > speed)
         {
             GetComponent<Rigidbody>().velocity -= new Vector3(velocityBall.x, velocityBall.y, 0.2f) * Time.deltaTime;
         }
@@ -50,6 +59,7 @@ public class BallBehaviour : MonoBehaviour
         if(isInObs)
         {
             AddVelocity();
+            QteSuccessPlay();
             isInObs = false;
         }
     }
@@ -59,6 +69,7 @@ public class BallBehaviour : MonoBehaviour
         if (isInJump)
         {
             AddJump();
+            QteSuccessPlay();
             isInJump = false;
         }
     }
@@ -73,8 +84,28 @@ public class BallBehaviour : MonoBehaviour
         GetComponent<Rigidbody>().velocity += new Vector3(0, 10f, 0);
     }
 
-    public void RespawnLastCheckpoint()
+    public void Respawn(Vector3 pos)
     {
-        transform.position = checkpoint;
+        transform.position = pos;
+    }
+
+    public void QteSuccessPlay()
+    {
+        if (generatedQteParticle == null)
+        {
+            generatedQteParticle = Instantiate(qteParticle, this.transform.position, Quaternion.identity);
+        }
+
+        generatedQteParticle.transform.position = this.transform.position;
+        generatedQteParticle.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+        generatedQteParticle.Play();
+
+        StartCoroutine(StopFXAfterDelay(generatedQteParticle.main.duration));
+    }
+
+    private IEnumerator StopFXAfterDelay(float a_Delay)
+    {
+        yield return new WaitForSeconds(a_Delay);
+        generatedQteParticle.Stop();
     }
 }
