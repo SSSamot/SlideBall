@@ -16,8 +16,10 @@ public class FruitPoint : MonoBehaviour
         {
             Debug.Log("OnTriggerEnter tag Player OK");
             GameManager.Singleton.AddScore(scoreValue);
-            Destroy(gameObject);
             ShowParticleEffect();
+            gameObject.SetActive(false);
+            GameManager.Singleton.PlayerFall += Reactivate;
+            
         }
     }
 
@@ -27,8 +29,7 @@ public class FruitPoint : MonoBehaviour
         {
             GameObject particles = Instantiate(particleEffect, transform.position, Quaternion.identity);
             Destroy(particles, 0.5f);
-            gameObject.SetActive(false);
-            GameManager.Singleton.PlayerFall += Reactivate;
+            
         }
     }
 
