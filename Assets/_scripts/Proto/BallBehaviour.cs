@@ -84,9 +84,9 @@ public class BallBehaviour : MonoBehaviour
         GetComponent<Rigidbody>().velocity += new Vector3(0, 10f, 0);
     }
 
-    public void RespawnLastCheckpoint()
+    public void Respawn(Vector3 pos)
     {
-        transform.position = checkpoint;
+        transform.position = pos;
     }
 
     public void QteSuccessPlay()

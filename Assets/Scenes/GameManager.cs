@@ -27,7 +27,20 @@ public class GameManager : MonoBehaviour
     float maxComboTime;
     float remainningComboTime;
     float gameTime;
-    public int fruits;
+    private int _fruits;
+    public int fruits
+    {
+        get
+        {
+            return _fruits;
+        }
+        set
+        {
+            _fruits = value;
+            if(fruitUI)
+                fruitUI.text = string.Format("{0:000}", fruits);
+        }
+    }
     private int _score;
     int score
     {
@@ -114,7 +127,6 @@ public class GameManager : MonoBehaviour
     public void AddScore(int s)
     {
         fruits++;
-        fruitUI.text = string.Format("{0:000}", fruits);
         if (remainningComboTime > 0)
             tmpscore += s;
         else
@@ -143,5 +155,25 @@ public class GameManager : MonoBehaviour
         timerUI = timer;
         scoreUI = score;
         fruitUI = fruit;
+    }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
+    public int GetFruits()
+    {
+        return fruits;
+    }
+
+    public void ResetFruits(int i)
+    {
+        fruits = i;
+    }
+        
+    public void ResetScore(int i)
+    {
+        score = i;
     }
 }
