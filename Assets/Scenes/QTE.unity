@@ -1097,10 +1097,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rail
       objectReference: {fileID: 0}
-    - target: {fileID: 2331603501722310237, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2331603501722310238, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1144,42 +1140,6 @@ PrefabInstance:
     - target: {fileID: 2331603501722310238, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2331603502094167937, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2331603502094167938, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2331603502094167938, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2331603503118415140, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2331603503118415140, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2331603503118415140, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2331603503481157102, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2331603503481157102, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2331603503481157102, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
