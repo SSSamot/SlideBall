@@ -36,10 +36,13 @@ public class ManuelJump : MonoBehaviour
             if (swipeEndPosition.y > swipeStartPosition.y) // Swipe vers le haut
             {
                 GameObject floor = GameObject.FindGameObjectWithTag("Floor");
+                
                 if (floor != null)
                 {
+
                     if (IsBallOnFloor())
                     {
+
                         BallBehaviour.instance.GetComponent<Rigidbody>().velocity += new Vector3(0, Jump, 0);
                     }
                 }
@@ -56,6 +59,7 @@ public class ManuelJump : MonoBehaviour
             {
                 return true;
             }
+
         }
         return false;
     }
