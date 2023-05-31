@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class ManuelJump : MonoBehaviour
 {
-    public float Jump = 5f;
-
     private Vector2 swipeStartPosition;
     private Vector2 swipeEndPosition;
+
+    public float Jump = 6f;
     public float minSwipeDistance = 50f;
 
     void Update()
@@ -35,8 +35,32 @@ public class ManuelJump : MonoBehaviour
         {
             if (swipeEndPosition.y > swipeStartPosition.y) // Swipe vers le haut
             {
-                BallBehaviour.instance.GetComponent<Rigidbody>().velocity += new Vector3(0, Jump, 0);
+                GameObject floor = GameObject.FindGameObjectWithTag("Floor");
+                
+                if (floor != null)
+                {
+
+                    if (IsBallOnFloor())
+                    {
+
+                        BallBehaviour.instance.GetComponent<Rigidbody>().velocity += new Vector3(0, Jump, 0);
+                    }
+                }
             }
         }
+    }
+
+    bool IsBallOnFloor()
+    {
+        Collider[] colliders = Physics.OverlapSphere(BallBehaviour.instance.transform.position, BallBehaviour.instance.transform.localScale.x / 2f);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Floor"))
+            {
+                return true;
+            }
+
+        }
+        return false;
     }
 }
