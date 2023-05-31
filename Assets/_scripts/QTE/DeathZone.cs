@@ -12,6 +12,7 @@ public class DeathZone : MonoBehaviour
             Vector3 vec = other.GetComponent<Rigidbody>().velocity;
             other.GetComponent<Rigidbody>().velocity = new Vector3(vec.x,vec.y, BallBehaviour.instance.speed);
             BallBehaviour.instance.RespawnLastCheckpoint();
+            GameManager.Singleton.PlayerFall?.Invoke();
         }
     }
 }
