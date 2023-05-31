@@ -27,6 +27,14 @@ public class FruitPoint : MonoBehaviour
         {
             GameObject particles = Instantiate(particleEffect, transform.position, Quaternion.identity);
             Destroy(particles, 0.5f);
+            gameObject.SetActive(false);
+            GameManager.Singleton.PlayerFall += Reactivate;
         }
+    }
+
+    void Reactivate()
+    {
+        gameObject.SetActive(true);
+        GameManager.Singleton.PlayerFall -= Reactivate;
     }
 }

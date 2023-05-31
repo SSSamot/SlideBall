@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public delegate void Event(int i);
     public Event FruitHit;
 
+    public delegate void PlayerEvent();
+    public PlayerEvent PlayerFall;
+
     public static GameManager Singleton;
 
     [SerializeField]
