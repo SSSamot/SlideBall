@@ -48,7 +48,7 @@ public class BallBehaviour : MonoBehaviour
         {
             GetComponent<Rigidbody>().velocity = new Vector3(velocityBall.x, velocityBall.y, speed);
         }
-        else if(velocityBall.z < speed)
+        else if(velocityBall.z > speed)
         {
             GetComponent<Rigidbody>().velocity -= new Vector3(velocityBall.x, velocityBall.y, 0.2f) * Time.deltaTime;
         }
