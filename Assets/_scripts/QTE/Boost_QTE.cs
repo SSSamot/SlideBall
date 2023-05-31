@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Boost_QTE : MonoBehaviour
 {
+    public float jumpForce = 10;
+
     public bool isBoostSpeed;
     public bool isBoostJump;
 
@@ -15,7 +17,10 @@ public class Boost_QTE : MonoBehaviour
             if (isBoostSpeed)
                 QTE_Manager.instance.isInSpeedBoost = true;
             if (isBoostJump)
+            {
+                QTE_Manager.instance.jumpForce = jumpForce;
                 QTE_Manager.instance.isInJumpBoost = true;
+            }
         }
     }
 
