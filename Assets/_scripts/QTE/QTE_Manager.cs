@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class QTE_Manager : MonoBehaviour
 {
+    public float jumpForce = 10;
+
     public bool isInSpeedBoost;
     public bool isInJumpBoost;
 
@@ -56,7 +58,7 @@ public class QTE_Manager : MonoBehaviour
         //Call function in GameManager or Ball instance for add Velocity Y (jump)
         if (isInJumpBoost && QTE_InputManager.instance.slide)
         {
-            BallBehaviour.instance.GetComponent<Rigidbody>().velocity += new Vector3(0, 10f, 0); // change by function GameManager
+            BallBehaviour.instance.GetComponent<Rigidbody>().velocity += new Vector3(0, jumpForce, 0); // change by function GameManager
             isInJumpBoost = false;
         }
     }
