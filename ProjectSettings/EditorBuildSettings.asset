@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game/Level 1.unity
     guid: 379c4291282f59742be479d2d80f0f20
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game/Tuto.unity
     guid: 4d97a3407cf49c2478eae32f88f6d88a
   - enabled: 0
@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Flo_proto.unity
     guid: 96c8e0bde58fcf44d808ea484ecb1c18
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/QTE.unity
     guid: cb23c03c33095064bbfd820a6cefb355
   m_configObjects: {}
