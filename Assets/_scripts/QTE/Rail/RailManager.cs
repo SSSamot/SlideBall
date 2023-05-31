@@ -46,8 +46,8 @@ public class RailManager : MonoBehaviour
         GameObject cursor = transform.GetChild(0).gameObject;
         float radiusCursor = cursor.GetComponent<SphereCollider>().radius * cursor.transform.localScale.x;
 
-        Vector2 posMouse = Input.mousePosition;                                         //pos Mouse in screen
-        //Vector2 posMouse = QTE_InputManager.instance.ReturnPos2D();
+        //Vector2 posMouse = Input.mousePosition;                                         //pos Mouse in screen
+        Vector2 posMouse = QTE_InputManager.instance.ReturnPos2D();
         Vector2 posCursor = Camera.main.WorldToScreenPoint(cursor.transform.position);  //pos Cursor in screen
 
         Vector2 dist = posMouse - posCursor;    // Distance between Input and Cursor
