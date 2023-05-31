@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QTE_Manager : MonoBehaviour
 {
-    public float jumpForce;
+    public float jumpForce = 4f;
 
     public bool isInSpeedBoost;
     public bool isInJumpBoost;
