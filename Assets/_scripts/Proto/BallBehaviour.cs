@@ -15,10 +15,13 @@ public class BallBehaviour : MonoBehaviour
     private ParticleSystem generatedQteParticle;
 
     public static BallBehaviour instance;
-    
+
+    Rigidbody rBody;
+
     private void Start()
     {
         generatedQteParticle = null;
+        rBody = GetComponent<Rigidbody>();
     }
 
     private void Awake()
@@ -42,15 +45,15 @@ public class BallBehaviour : MonoBehaviour
 
     private void SpeedBehaviour()
     {
-        Vector3 velocityBall = GetComponent<Rigidbody>().velocity;
+        Vector3 velocityBall = rBody.velocity;
 
         if (velocityBall.z < speed)
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(velocityBall.x, velocityBall.y, speed);
+            rBody.velocity = new Vector3(velocityBall.x, velocityBall.y, speed);
         }
         else if(velocityBall.z > speed)
         {
-            GetComponent<Rigidbody>().velocity -= new Vector3(velocityBall.x, velocityBall.y, 0.2f) * Time.deltaTime;
+            rBody.velocity -= new Vector3(velocityBall.x, velocityBall.y, 0.2f) * Time.deltaTime;
         }
     }
 
@@ -76,17 +79,18 @@ public class BallBehaviour : MonoBehaviour
 
     private void AddVelocity()
     {
-        GetComponent<Rigidbody>().velocity += new Vector3(0, 0, 10f);
+        rBody.velocity += new Vector3(0, 0, 10f);
     }
 
     private void AddJump()
     {
-        GetComponent<Rigidbody>().velocity += new Vector3(0, 10f, 0);
+        rBody.velocity += new Vector3(0, 10f, 0);
     }
 
     public void Respawn(Vector3 pos)
     {
         transform.position = pos;
+        rBody.velocity = new Vector3(0, 0, 0);
     }
 
     public void QteSuccessPlay()

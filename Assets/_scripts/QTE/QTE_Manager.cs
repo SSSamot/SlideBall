@@ -12,11 +12,14 @@ public class QTE_Manager : MonoBehaviour
     private GameObject _rail; // Stock actual rail manager
 
     public static QTE_Manager instance;
+
+    Rigidbody ballRBody;
     private void Awake()
     {
         if (instance != null)
             return;
         instance = this;
+        ballRBody = BallBehaviour.instance.GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -51,7 +54,7 @@ public class QTE_Manager : MonoBehaviour
         if (isInSpeedBoost && QTE_InputManager.instance.click)
         {
             //GameManager.Singleton.QTEWon();
-            BallBehaviour.instance.GetComponent<Rigidbody>().velocity += new Vector3(0, 0, 10f); // change by function GameManager
+            ballRBody.velocity += new Vector3(0, 0, 10f); // change by function GameManager
             isInSpeedBoost = false; 
         }
     }
@@ -61,7 +64,7 @@ public class QTE_Manager : MonoBehaviour
         //Call function in GameManager or Ball instance for add Velocity Y (jump)
         if (isInJumpBoost && QTE_InputManager.instance.slide)
         {
-            BallBehaviour.instance.GetComponent<Rigidbody>().velocity += new Vector3(0, jumpForce, 0); // change by function GameManager
+            ballRBody.velocity += new Vector3(0, jumpForce, 0); // change by function GameManager
             isInJumpBoost = false;
         }
     }
