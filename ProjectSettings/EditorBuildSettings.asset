@@ -5,22 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Game/Level 1.unity
-    guid: 379c4291282f59742be479d2d80f0f20
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Game/MainMenu.unity
+    guid: c9863f5a610babe42b3f2dc2c9399eff
+  - enabled: 1
+    path: Assets/Scenes/Game/LevelSelect.unity
+    guid: 18593c35fd3f1a4438b35ef44711f092
+  - enabled: 1
     path: Assets/Scenes/Game/Tuto.unity
     guid: 4d97a3407cf49c2478eae32f88f6d88a
-  - enabled: 0
-    path: Assets/Scenes/SceneLeny.unity
-    guid: 8fd4ffca2acbe9e4784aedb52b214d3f
-  - enabled: 0
-    path: Assets/Scenes/SceneTuto.unity
-    guid: 128f5f07d02c03c488642f1216569d06
-  - enabled: 0
-    path: Assets/Scenes/Flo_proto.unity
-    guid: 96c8e0bde58fcf44d808ea484ecb1c18
   - enabled: 1
-    path: Assets/Scenes/QTE.unity
-    guid: cb23c03c33095064bbfd820a6cefb355
+    path: Assets/Scenes/Game/Level 1.unity
+    guid: 379c4291282f59742be479d2d80f0f20
+  - enabled: 1
+    path: Assets/Scenes/Game/EndMenu.unity
+    guid: 702d9487e79a1ff4caf063c0eef2bd67
   m_configObjects: {}

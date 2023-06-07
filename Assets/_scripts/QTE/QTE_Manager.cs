@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QTE_Manager : MonoBehaviour
 {
-    public float jumpForce;
+    public float jumpForce = 4f;
 
     public bool isInSpeedBoost;
     public bool isInJumpBoost;
@@ -25,11 +25,15 @@ public class QTE_Manager : MonoBehaviour
         QTE_JumpSuccess();
 
         // SUP fonction ###########################################################################################################
-        if (BallBehaviour.instance.transform.position.y < -10)
+        
+        /*
+            if (BallBehaviour.instance.transform.position.y < -10)
         {
             ResetActualRail();
             BallBehaviour.instance.transform.position = new Vector3(0, 1, -45);
         } 
+
+        */
         // ########################################################################################################################
     }
 
@@ -46,9 +50,9 @@ public class QTE_Manager : MonoBehaviour
         // Call Function in GameManager for add ScoreMultiply and Velocity Z (speed) or speed var
         if (isInSpeedBoost && QTE_InputManager.instance.click)
         {
-            Debug.Log("Speed !");
             //GameManager.Singleton.QTEWon();
-            BallBehaviour.instance.Combo();
+            BallBehaviour.instance.GetComponent<Rigidbody>().velocity += new Vector3(0, 0, 10f); // change by function GameManager
+            isInSpeedBoost = false; 
         }
     }
     

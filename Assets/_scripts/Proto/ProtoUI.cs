@@ -17,13 +17,9 @@ public class ProtoUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI pauseScore;
     [SerializeField] TextMeshProUGUI pauseFruit;
 
-    private float timer;
-    private float minutes;
-    private float seconds;
-    private string stringMinutes;
-    private string stringSeconds;
-
     public static bool isPaused;
+
+    string currentScene;
 
     void Start()
     {
@@ -37,7 +33,8 @@ public class ProtoUI : MonoBehaviour
     {
         GameManager.Singleton.GameStart();
         PauseGame();
-        GameManager.Singleton.LoadScene("MainUI");
+        currentScene = SceneManager.GetActiveScene().name;
+        GameManager.Singleton.LoadScene(currentScene);
     }
 
     public void LoadMenu()

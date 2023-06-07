@@ -8,7 +8,13 @@ public class DeathZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            BallBehaviour.instance.RespawnLastCheckpoint();
+            
+            Vector3 vec = other.GetComponent<Rigidbody>().velocity;
+            other.GetComponent<Rigidbody>().velocity = new Vector3(vec.x,vec.y, BallBehaviour.instance.speed);
+            GameManager.Singleton.PlayerFall?.Invoke();
+
+            QTE_Manager.instance.ResetActualRail();
+            other.GetComponent<Gyroscope>().enabled = true;
         }
     }
 }
