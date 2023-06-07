@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInObs: 0
   isInJump: 0
-  speed: 5
+  speed: 12
   checkpoint: {x: 0, y: 0, z: 0}
   qteParticle: {fileID: 0}
 --- !u!114 &-4039747023734818680
