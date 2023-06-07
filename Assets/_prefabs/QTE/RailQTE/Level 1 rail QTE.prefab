@@ -24,13 +24,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6649514186417601758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 24}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6179381960770828278}
   - {fileID: 9166976892120936280}
   - {fileID: 2106661948890361381}
+  - {fileID: 6179381960770828278}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,12 +46,16 @@ PrefabInstance:
       value: Paille (2)
       objectReference: {fileID: 0}
     - target: {fileID: 201978532098794923, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 201978532098794923, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_TagString
       value: RailQTE
       objectReference: {fileID: 0}
     - target: {fileID: 686309433817480977, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 686309433817480977, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_LocalScale.x
@@ -67,11 +71,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 686309433817480977, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 1.38
       objectReference: {fileID: 0}
     - target: {fileID: 686309433817480977, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 686309433817480977, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -155,7 +159,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 201978532098794923, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_Name
-      value: Paille
+      value: Paille (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 201978532098794923, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 201978532098794923, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_TagString
@@ -163,7 +171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 686309433817480977, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 686309433817480977, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_LocalScale.x
@@ -270,12 +278,16 @@ PrefabInstance:
       value: Paille (1)
       objectReference: {fileID: 0}
     - target: {fileID: 201978532098794923, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 201978532098794923, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_TagString
       value: RailQTE
       objectReference: {fileID: 0}
     - target: {fileID: 686309433817480977, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 686309433817480977, guid: 909a08e0a23e49341b84941f7d49abf1, type: 3}
       propertyPath: m_LocalScale.x

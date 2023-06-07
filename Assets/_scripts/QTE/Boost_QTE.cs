@@ -16,10 +16,11 @@ public class Boost_QTE : MonoBehaviour
         {
             if (isBoostSpeed)
                 QTE_Manager.instance.isInSpeedBoost = true;
-            if (isBoostJump)
+            if (isBoostJump && other.GetComponent<ManuelJump>().IsBallOnFloor())
             {
                 QTE_Manager.instance.jumpForce = jumpForce;
                 QTE_Manager.instance.isInJumpBoost = true;
+                other.GetComponent<ManuelJump>().enabled = false;
             }
         }
     }
@@ -30,6 +31,7 @@ public class Boost_QTE : MonoBehaviour
         {
             QTE_Manager.instance.isInSpeedBoost = false;
             QTE_Manager.instance.isInJumpBoost = false;
+            other.GetComponent<ManuelJump>().enabled = true;
         }
     }
 }

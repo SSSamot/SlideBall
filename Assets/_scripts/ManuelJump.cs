@@ -15,7 +15,7 @@ public class ManuelJump : MonoBehaviour
             Touch touch = Input.GetTouch(0);
 
             
-            if (touch.phase == TouchPhase.Began && !QTE_Manager.instance.isInJumpBoost)
+            if (touch.phase == TouchPhase.Began)
             {
                 swipeStartPosition = touch.position;
                 
@@ -53,7 +53,7 @@ public class ManuelJump : MonoBehaviour
     }
 
     
-    bool IsBallOnFloor()
+    public bool IsBallOnFloor()
     {
         Collider[] colliders = Physics.OverlapSphere(BallBehaviour.instance.transform.position, BallBehaviour.instance.transform.localScale.x / 2f);
         foreach (Collider collider in colliders)
