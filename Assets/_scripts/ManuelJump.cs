@@ -15,7 +15,7 @@ public class ManuelJump : MonoBehaviour
             Touch touch = Input.GetTouch(0);
 
             
-            if (touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Began && !QTE_Manager.instance.isInJumpBoost)
             {
                 swipeStartPosition = touch.position;
                 
@@ -40,17 +40,14 @@ public class ManuelJump : MonoBehaviour
         {
             if (swipeEndPosition.y > swipeStartPosition.y) // Swipe vers le haut
             {
-                GameObject floor = GameObject.FindGameObjectWithTag("Floor");
                 
-                if (floor != null)
-                {
 
                     if (IsBallOnFloor())
                     {
 
                         BallBehaviour.instance.GetComponent<Rigidbody>().velocity += new Vector3(0, Jump, 0);
                     }
-                }
+
             }
         }
     }
