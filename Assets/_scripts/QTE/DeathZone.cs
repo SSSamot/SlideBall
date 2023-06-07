@@ -8,9 +8,10 @@ public class DeathZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            
-            Vector3 vec = other.GetComponent<Rigidbody>().velocity;
-            other.GetComponent<Rigidbody>().velocity = new Vector3(vec.x,vec.y, BallBehaviour.instance.speed);
+            Rigidbody rBody = other.GetComponent<Rigidbody>();
+
+            Vector3 vec = rBody.velocity;
+            rBody.velocity = new Vector3(vec.x,vec.y, BallBehaviour.instance.speed);
             GameManager.Singleton.PlayerFall?.Invoke();
 
             QTE_Manager.instance.ResetActualRail();
