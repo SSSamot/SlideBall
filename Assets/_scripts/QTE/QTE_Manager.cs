@@ -75,8 +75,11 @@ public class QTE_Manager : MonoBehaviour
 
     public void ResetActualRail()
     {
-        _rail.transform.parent.gameObject.SetActive(true);
-        _rail.GetComponent<RailManager>().ResetRail();
-        _rail.SetActive(false);
+        if(_rail != null)
+        {
+            _rail.transform.parent.gameObject.SetActive(true);
+            _rail.GetComponent<RailManager>().ResetRail();
+            _rail.SetActive(false);
+        }
     }
 }
