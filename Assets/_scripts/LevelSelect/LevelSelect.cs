@@ -9,8 +9,8 @@ public class LevelSelect : MonoBehaviour
         // Load level
         Debug.Log("Loading level" + level);
         GameManager.Singleton.currentLevel = level;
-        GameManager.Singleton.LoadScene("Level 1");
-        // GameManager.Singleton.LoadScene("level" + level);
+        //GameManager.Singleton.LoadScene("Level1");
+        GameManager.Singleton.LoadScene("level" + level);
     }
 
     public void LoadTuto()
