@@ -18,10 +18,13 @@ public class BallBehaviour : MonoBehaviour
 
     Rigidbody rBody;
 
+    private Gyroscope gyro;
+
     private void Start()
     {
         generatedQteParticle = null;
         rBody = GetComponent<Rigidbody>();
+        gyro = GetComponent<Gyroscope>();
     }
 
     private void Awake()
@@ -111,5 +114,10 @@ public class BallBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(a_Delay);
         generatedQteParticle.Stop();
+    }
+
+    public void ResetGyro()
+    {
+        gyro.Reset();
     }
 }

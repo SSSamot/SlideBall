@@ -72,4 +72,9 @@ public class ProtoUI : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
     }
+
+    public void ResetGyro()
+    {
+        BallBehaviour.instance.ResetGyro();
+    }
 }

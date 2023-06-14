@@ -6,6 +6,7 @@ public class Gyroscope : MonoBehaviour
 {
     [SerializeField]
     float sensibility = 5f; 
+    float speedMult = 1f;
     float acceleration = 0f;
     Rigidbody rBody;
 
@@ -18,8 +19,13 @@ public class Gyroscope : MonoBehaviour
     void Update()
     {
         Vector3 rotationRate = -Input.gyro.rotationRateUnbiased;
-        acceleration += rotationRate.z * Time.deltaTime;
-        rBody.velocity += new Vector3(acceleration * sensibility, 0, 0);
-            
+        acceleration += rotationRate.z * sensibility ;
+        rBody.velocity += new Vector3(acceleration * speedMult * Time.deltaTime, 0, 0);
+    }
+
+    public  void Reset()
+    {
+        acceleration = 0;
+        rBody.velocity = new Vector3(0, 0, 0);
     }
 }
