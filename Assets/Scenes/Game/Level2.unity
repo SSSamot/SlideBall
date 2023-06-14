@@ -2925,6 +2925,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5484923799810744689, guid: c9a1265548a9c3a4eb7808468de62a9f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 897260ee017f5594d8954d0ce1c26bd6, type: 3}
+    - target: {fileID: 6070568634558650906, guid: c9a1265548a9c3a4eb7808468de62a9f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070568634558650906, guid: c9a1265548a9c3a4eb7808468de62a9f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.15000153
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9a1265548a9c3a4eb7808468de62a9f, type: 3}
 --- !u!1001 &408739489
