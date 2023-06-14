@@ -21,6 +21,11 @@ public class Gyroscope : MonoBehaviour
         Vector3 rotationRate = -Input.gyro.rotationRateUnbiased;
         acceleration += rotationRate.z * sensibility ;
         rBody.velocity += new Vector3(acceleration * speedMult * Time.deltaTime, 0, 0);
-            
+    }
+
+    public  void Reset()
+    {
+        acceleration = 0;
+        rBody.velocity = new Vector3(0, 0, 0);
     }
 }
