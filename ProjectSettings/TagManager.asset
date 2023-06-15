@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - RailManager
   - RailQTE
+  - SlideTuto
   layers:
   - Default
   - TransparentFX
