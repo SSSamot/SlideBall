@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cffe385054e23f344bc2102f78ed7c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxComboTime: 0
+  gameState: 3
+  currentLevel: 0
+  levelTotal: 3

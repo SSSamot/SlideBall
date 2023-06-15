@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class EndMenu : MonoBehaviour
 {
@@ -29,14 +30,24 @@ public class EndMenu : MonoBehaviour
     public void LoadMenu()
     {
         // Go to main menu
-        GameManager.Singleton.LoadScene("MainMenu");
+        GameManager.Singleton.LoadScene("LevelSelect");
     }
 
     public void ReplayLevel()
     {
         // Replay current level
-        // GameManager.Singleton.LoadScene("level" + currentLevel);
+        if (currentLevel == 0)
+		{
+            GameManager.Singleton.LoadScene("Tuto");
+        }
+        else
+		{
+            GameManager.Singleton.LoadScene("level" + currentLevel);
+        }
+        
+        
     }
+
 
     public void NextLevel()
     {

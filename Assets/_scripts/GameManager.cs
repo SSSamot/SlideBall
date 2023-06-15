@@ -84,6 +84,8 @@ public class GameManager : MonoBehaviour
         score = 0;
         tmpscore = 0; 
         scoreMult = 1f;
+
+
     }
 
     // Update is called once per frame
@@ -114,6 +116,11 @@ public class GameManager : MonoBehaviour
         fruits = 0;
         tmpscore = 0;
         scoreMult = 1f;
+
+        if (SceneManager.GetActiveScene().name == "Tuto")
+        {
+            currentLevel = 0;
+        }
     }
 
     public void GameEnd()
