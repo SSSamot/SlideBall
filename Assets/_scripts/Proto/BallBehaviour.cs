@@ -118,6 +118,19 @@ public class BallBehaviour : MonoBehaviour
 
     public void ResetGyro()
     {
-        gyro.Reset();
+        Gyroscope newGyroscopeScript = GetComponent<Gyroscope>();
+        if (newGyroscopeScript.enabled)
+		{
+            gyro.Reset();
+        }
+        
+
+        Old_Gyroscope oldGyroscopeScript = GetComponent<Old_Gyroscope>();
+        if (oldGyroscopeScript.enabled)
+        {
+            oldGyroscopeScript.ResetGyroscope();
+        }
+
+            
     }
 }

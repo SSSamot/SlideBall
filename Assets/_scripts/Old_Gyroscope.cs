@@ -7,6 +7,9 @@ public class Old_Gyroscope : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 0.5f; // Movement speed in units per second
     float accumulativeRotation = 0f;
+    private Quaternion initialRotation; // Store the initial rotation of the object
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,4 +37,12 @@ public class Old_Gyroscope : MonoBehaviour
 
 
     }
+
+    public void ResetGyroscope()
+    {
+        accumulativeRotation = 0f;
+        transform.rotation = initialRotation;
+    }
+
+
 }

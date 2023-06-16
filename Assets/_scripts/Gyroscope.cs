@@ -23,7 +23,7 @@ public class Gyroscope : MonoBehaviour
         rBody.velocity += new Vector3(acceleration * speedMult * Time.deltaTime, 0, 0);
     }
 
-    public  void Reset()
+    public void Reset()
     {
         acceleration = 0;
         rBody.velocity = new Vector3(0, 0, 0);
