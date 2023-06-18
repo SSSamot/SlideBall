@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 8629440048587822382}
   - component: {fileID: 8629440048587822386}
   - component: {fileID: -8393526047462105512}
+  - component: {fileID: 4083451670317357849}
   - component: {fileID: -4039747023734818680}
   - component: {fileID: -3955849459714397931}
   m_Layer: 0
@@ -175,7 +176,7 @@ MonoBehaviour:
   speed: 12
   checkpoint: {x: 0, y: 0, z: 0}
   qteParticle: {fileID: 0}
---- !u!114 &-4039747023734818680
+--- !u!114 &4083451670317357849
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,6 +184,19 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8629440048587822383}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62821eb3e0661c54f8f15ecfbfd195e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 0.5
+--- !u!114 &-4039747023734818680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8629440048587822383}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd04edc65392f0241bf0f628db42a64d, type: 3}
   m_Name: 
