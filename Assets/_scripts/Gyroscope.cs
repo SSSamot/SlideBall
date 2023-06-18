@@ -5,7 +5,8 @@ using UnityEngine;
 public class Gyroscope : MonoBehaviour
 {
     [SerializeField]
-    float sensibility = 5f; 
+    float sensibility = 5f;
+    [SerializeField]
     float speedMult = 1f;
     float acceleration = 0f;
     Rigidbody rBody;

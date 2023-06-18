@@ -94,6 +94,7 @@ public class BallBehaviour : MonoBehaviour
     {
         transform.position = pos;
         rBody.velocity = new Vector3(0, 0, 0);
+        ResetGyro();
     }
 
     public void QteSuccessPlay()
@@ -123,14 +124,5 @@ public class BallBehaviour : MonoBehaviour
 		{
             gyro.Reset();
         }
-        
-
-        Old_Gyroscope oldGyroscopeScript = GetComponent<Old_Gyroscope>();
-        if (oldGyroscopeScript.enabled)
-        {
-            oldGyroscopeScript.ResetGyroscope();
-        }
-
-            
     }
 }
