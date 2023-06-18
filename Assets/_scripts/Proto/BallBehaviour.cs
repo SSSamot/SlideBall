@@ -36,7 +36,7 @@ public class BallBehaviour : MonoBehaviour
     
     void Update()
     {
-        SetCamera();
+        //SetCamera();
         SpeedBehaviour();
     }
 

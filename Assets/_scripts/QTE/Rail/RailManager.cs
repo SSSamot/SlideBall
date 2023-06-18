@@ -84,19 +84,31 @@ public class RailManager : MonoBehaviour
             
     }
 
+    public void SetPosCursor(GameObject obj)
+    {
+        transform.GetChild(0).gameObject.SetActive(true);
+
+        Vector3 posQTE = obj.transform.position;
+        posQTE.z = transform.position.z - 0.5f;
+
+        transform.GetChild(0).transform.position = posQTE;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("RailQTE"))
         {
             railQTE = other.gameObject;
 
-            Vector3 posQTE = other.transform.position;
+            SetPosCursor(railQTE);
+
+            /*Vector3 posQTE = other.transform.position;
             posQTE.z = transform.position.z -0.5f;
 
             transform.GetChild(0).transform.position = posQTE;
 
             Vector3 cursor = transform.GetChild(0).transform.position;
-            Debug.Log(Camera.main.WorldToScreenPoint(cursor));
+            Debug.Log(Camera.main.WorldToScreenPoint(cursor));*/
         }
     }
 
@@ -114,5 +126,6 @@ public class RailManager : MonoBehaviour
         Destroy(QTE);
         //QTE = null;
         railQTE = null;
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 }
