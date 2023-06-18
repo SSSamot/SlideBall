@@ -9,6 +9,10 @@ public class CanvasManager : MonoBehaviour
     private static CanvasManager instance;
     public GameObject tutorialPanel;
     public TextMeshProUGUI panelTutoText;
+    public Image panelTutoImage;
+
+    public Sprite swipe;
+    public Sprite rotate;
 
 
     // Public property to access the instance
@@ -42,19 +46,21 @@ public class CanvasManager : MonoBehaviour
         switch (id)
         {
             case 0:
-                panelTutoText.text = "Gyroscope Tutoriel";
+                panelTutoText.text = "Inclinez votre téléphone vers la droite ou la gauche pour déplacer l'orange";
+                panelTutoImage.sprite = rotate;
                 break;
             case 1:
-                panelTutoText.text = "1 Tutoriel";
+                panelTutoText.text = "Appuyez sur l'écran quand votre orange est sur le booster de vitesse";
+                panelTutoImage.sprite = swipe;
                 break;
             case 2:
-                panelTutoText.text = "2 Tutoriel";
+                panelTutoText.text = "Swipe vers le haut quand l'orange est sur le booster de saut";
                 break;
             case 3:
-                panelTutoText.text = "3 Tutoriel";
+                panelTutoText.text = "Swipez vers le haut pour faire un petit saut";
                 break;
             case 4:
-                panelTutoText.text = "4 Tutoriel";
+                panelTutoText.text = "Maintenez le doigt sur les pailles (bien au centre), relâchez uniquement quand la paille à disparu";
                 break;
             default:
                 print("none");
