@@ -35,7 +35,7 @@ public class CanvasManager : MonoBehaviour
         instance = this;
 
         // Keep the manager object persistent between scenes
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     public void ShowTutorial(int id)

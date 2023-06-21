@@ -2944,6 +2944,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1502689122, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110818825262838313, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2331603501722310237, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
       propertyPath: m_Name
       value: Rail
@@ -2995,6 +3003,18 @@ PrefabInstance:
     - target: {fileID: 2331603502094167937, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331603502094167938, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331603502094167939, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
+      propertyPath: prefabQTE
+      value: 
+      objectReference: {fileID: 6649514186417601758, guid: bcfdcbaac06c00a4cb1619c90b0aabb0, type: 3}
+    - target: {fileID: 7695033777998493188, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -25.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e706b530e6cd79409253007ff7963d3, type: 3}
